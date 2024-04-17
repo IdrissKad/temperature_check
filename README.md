@@ -7,7 +7,7 @@ The main packages needed are requests, csv, datetime and pandas.
 
 ### Data Importation
 
-The data is imported through the API : https://api.openweathermap.org/data/2.5/forecast. From the API import the current temperatures and the forecasted temperature in the next 3 hours, using update_temperature.py.
+The data is imported through the API : https://api.openweathermap.org/data/2.5/forecast. From the API import the current temperatures and the forecasted temperature in the next 3 hours, using update_temperature.py. This work could be automated.
 
 ### Storing data
 
@@ -15,8 +15,8 @@ The data is stored in an updated csv file, containing the time, the cities, the 
 
 ### Monitoring
 
-Check to see if the forecasted temperature is superior to the temperature it was at the same time. Receiving an alert by email. Using monitor_temperature.py
+Check to see if the forecasted temperature is superior to the temperature it was at the same time. Receiving an alert by email. Using monitor_temperature.py, the code must be ran to receive the emails after the update_temperature.py.
 
 ### Automation
 
-Use a cron job to automate the code every hour.
+Use a cron job to automate the code every hour. Or run the code <update_temperature.py> every hour.
