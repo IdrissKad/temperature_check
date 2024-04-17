@@ -19,4 +19,4 @@ Check to see if the forecasted temperature is superior to the temperature it was
 
 ### Automation
 
-Use a cron job to automate the code every hour. Or run the code <update_temperature.py> every hour.
+Use a cron job to automate the code every hour. Or run the code update_temperature.py every hour.
