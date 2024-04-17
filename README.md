@@ -1,22 +1,35 @@
-# Temperature check
-The goal of this repo is to create an automated tool to monitor temperatures in three differents cities, New York, Paris and London. It contains 2 pythons file.
+# Temperature Monitoring
+This repository contains two Python scripts designed to update and monitor temperature data for various cities. Below are descriptions and instructions for each script.
 
-### Imports and packages
+## Scripts
 
-The main packages needed are requests, csv, datetime and pandas.
+### 1. update_temperature.py
 
-### Data Importation
+Purpose: This script fetches the current temperature for specified cities and stores the data in a local CSV file.
 
-The data is imported through the API : https://api.openweathermap.org/data/2.5/forecast. From the API import the current temperatures and the forecasted temperature in the next 3 hours, using update_temperature.py. This work could be automated.
+Features:
 
-### Storing data
+- Fetches temperature data using the OpenWeatherMap API : https://api.openweathermap.org/data/2.5/forecast.
+- Stores temperatures along with timestamps in a CSV file.
 
-The data is stored in an updated csv file, containing the time, the cities, the forecasted temperature and the current temperature.
+### 2. monitor_temperature.py
 
-### Monitoring
+Purpose: This script monitors the temperature data stored by update_temperature.py and checks for deviations between the forecasted temperatures (for the next three hours) and actual temperatures. If the deviation exceeds a specified threshold (1°C), it sends an email notification.
 
-Check to see if the forecasted temperature is superior to the temperature it was at the same time. Receiving an alert by email. Using monitor_temperature.py, the code must be ran to receive the emails after the update_temperature.py.
+Features:
+
+- Compares forecasted and actual temperatures from a CSV file.
+- Sends email alerts if temperature deviations exceed a predefined threshold.
+
+## Requirements
+
+To run these scripts, you will need:
+
+- Python 3.6 or higher.
+- requests library for making API calls.
+- smtplib and email.message for sending emails.
+
 
 ### Automation
 
-Use a cron job to automate the code every hour. Or run the code update_temperature.py every hour.
+Use a cron job to automate the code every hour. Or run the codes update_temperature.py and monitor_temperature.py every hour.
